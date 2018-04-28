@@ -1,0 +1,23 @@
+language: python
+python:
+    - "2.7"
+before_script:
+    - pip install -r test-requirements.txt
+    - fab create_database:is_test=True
+install: "pip install -r requirements.txt"
+env:
+    - DOCKER_COMPOSE_VERSION=1.21.0
+sudo: required
+services:
+    - docker
+dist: trusty
+before_install:
+    - sudo rm /usr/local/bin/docker-compose
+    - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+    - chmod +x docker-compose
+    - sudo mv docker-compose /usr/local/bin
+    - sudo docker-compose up --build --abort-on-container-exit
+    - sudo apt-get update -qq
+    - sudo apt-get install -y xvfb
+    - sudo apt-get install -y firefox
+script: "sudo docker-compose run test ls && ./runtests --with-xcoverage && ./run_js_tests"
