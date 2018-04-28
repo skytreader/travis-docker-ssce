@@ -1,0 +1,187 @@
+/*Global style definitions*/
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	background-color: #4c4039;
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+h1 {
+	font-size: 25px;
+}
+
+h2 {
+	font-size: 23px;
+}
+
+h3 {
+    font-size: 21px;
+}
+
+hr {
+	color: #4c4039;
+	background-color: #4c4039;
+	width: 98.8%;
+	height: 3px;
+	border: 0px;
+	margin-bottom: 3px;
+}
+
+p, .text {
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: justify;
+	padding-bottom: 8px;
+	padding-right: 10px;
+	color: #000000;
+}
+
+label{
+    font-weight: normal;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.disabled {
+    color: #888;
+}
+
+/*Boxes*/
+
+div.main_box {
+	background-color: #ffffff;
+	color: #000000;
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
+	min-height: 100%;
+	float: left;
+}
+
+div.content_box {
+	margin: 5px;
+	float: left;
+	width: 100%;
+}
+
+div.navbox{
+	background-color: #4c4039;
+	color: #ffffff;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	word-spacing: 20px;
+	margin-top: 10px;
+    padding: 5px 12px;
+}
+
+div.block{
+	float: none;
+	padding: 5px;
+	margin: 3px;
+}
+
+div.queued_block{
+    border-radius: 28px;
+    width: 98%;
+    min-height: 128px;
+    text-align: center;
+    margin: 3px;
+    padding: 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+div.saved_book{
+    background-color: #f07746;
+    color: #fff;
+}
+
+div.error_book{
+    background-color: #ac2929;
+    color: #fff;
+}
+
+div.reprocess_book{
+    background-color: #dbef4d;
+    color: #000;
+}
+
+div.empty_set, div.unsaved_book, div.grouped_input{
+    padding: 10px;
+    background-color: #dadada;
+}
+
+a.navbox{
+	color: #ffffff;
+	word-spacing: normal;
+}
+
+label.input-holder{
+    width: 97%;
+}
+
+/*Forms*/
+input.search, select.search, option.search {
+	font-size: 16px;
+    padding: 10px;
+}
+
+.searchbox{
+    width: 70%;
+}
+
+/*input.btn {
+	padding: 5px;
+	border: solid 1px #2b2b2b;
+}*/
+
+input.btn:hover {
+	border-color: #d2c136;
+}
+
+input.btn:active {
+	color: #fff;
+}
+
+/*
+special_labels are input textboxes used as labels to checkboxes. They follow
+bootstrap styling so this just overrides on them.
+
+They are usually readonly text fields hence the !important indicator in cursor.
+*/
+input.special_label{
+    max-width: 30%;
+    cursor: default !important;
+}
+
+.btn-primary{
+	background-color: #2b2b2b;
+    background-image: none;
+    text-shadow: none;
+	color: #d2c136;
+}
+
+.btn-primary:hover{
+    background-color: #000;
+}
+
+input.infrequent{
+	background-color: #896f62;
+	color: #000;
+}
+
+/*Images*/
+
+img.logo {
+    margin-left: 8px;
+    margin-top: 8px;
+}

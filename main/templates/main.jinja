@@ -1,0 +1,37 @@
+{#
+This view requires the following variables to be defined:
+  title - displayed at the title bar of the browser
+  stylesheets - list of css filenames, to customize look, if mainlicable. bootstrap
+    themes and the librarian theme is included by default.
+  scripts - list of javascript filenames for custom behavior, if mainlicable. jquery
+    is included by default.
+  
+For both stylesheets and scripts, it is assumed that the resource is in the
+default resource directory (/static/scripts and static/styles).
+
+Additionally, if the $content contains text to be echoed, users of this
+view must set a variable $echo_content to TRUE. You should also, ALWAYS,
+load the URL helper.
+#}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>App - {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="/static/styles/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/styles/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/styles/librariantheme.css">
+        <link rel="stylesheet" type="text/css" href="/static/styles/font-awesome.min.css">
+        {% for style in stylesheets: %}
+            <link rel="stylesheet" type="text/css" href="/static/styles/{{ style }}">
+        {% endfor %}
+        
+        <script type="text/javascript" src="/static/scripts/jquery.js"></script>
+        {% for script in scripts: %}
+            <script type="text/javascript" src="/static/scripts/{{ script }}"></script>
+        {% endfor %}
+    </head>
+    <body>
+        <h1>Flask Fire</h1>
+    </body>
+</html>
