@@ -14,7 +14,7 @@ import os
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))  
 
 # Instead of editing this file to specify a host, you can just edit your /etc/hosts.
-SQL_HOST = "localhost"
+SQL_HOST = "db"
 SQL_PORT = 3306
 SQL_USERNAME = "root"
 SQL_PASSWORD = ""
@@ -23,7 +23,7 @@ SQL_DB_NAME = "app"
 SQL_TEST_DB_NAME = "%s_test" % SQL_DB_NAME
 SQLALCHEMY_DATABASE_URI = '%s://%s:%s@%s:%d/%s' % (SQL_ENGINE, SQL_USERNAME,
   SQL_PASSWORD, SQL_HOST, SQL_PORT, SQL_DB_NAME)
-SQLALCHEMY_TEST_DATABASE_URI = '%s://%s:%s@%s:%d/%s' % (SQL_ENGINE, SQL_USERNAME,
+SQLALCHEMY_TEST_DATABASE_URI = '%s://%s:%s@%s_test:%d/%s' % (SQL_ENGINE, SQL_USERNAME,
   SQL_PASSWORD, SQL_HOST, SQL_PORT, SQL_TEST_DB_NAME)
 SQLALCHEMY_ECHO = DEVEL
 DATABASE_CONNECT_OPTIONS = {"user":"root"}
